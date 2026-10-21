@@ -90,7 +90,7 @@ cp devops/cloud/terraform.tfvars.example devops/cloud/terraform.tfvars
 cp devops/cloud/backend.hcl.example devops/cloud/backend.hcl
 ```
 
-In tutti e tre i file sostituisci `its-ict-template-sage` con il tuo project id reale
+In tutti e tre i file sostituisci `its-ict-sage-csp26` con il tuo project id reale
 (`its-ict-<nome>-<cognome>`). Questi tre file sono nel `.gitignore`: restano solo sulla tua
 macchina/nel tuo ambiente CI, non finiscono mai nel repository.
 
