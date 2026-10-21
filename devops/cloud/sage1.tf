@@ -146,17 +146,17 @@ provider "google" {
 # ------------------------------------------------------------------------------
 # Outputs
 # ------------------------------------------------------------------------------
-output "cloud_run_url" {
-  value       = google_cloud_run_v2_service.default.uri
-  description = "URL del servizio Cloud Run"
-}
-
-output "artifact_registry_url" {
-  value       = "${var.region}-docker.pkg.dev/${var.project_id}/${google_artifact_registry_repository.registry.name}"
-  description = "URI base dell'Artifact Registry per fare il push delle immagini Docker"
-}
-
-output "service_account_email" {
-  value       = google_service_account.app_sa.email
-  description = "Email del Service Account creato"
-}
+# output "cloud_run_url" {
+#   value       = google_cloud_run_v2_service.default.uri
+#   description = "URL del servizio Cloud Run"
+# }
+# 
+# output "artifact_registry_url" {
+#   value       = "${var.region}-docker.pkg.dev/${var.project_id}/${google_artifact_registry_repository.registry.name}"
+#   description = "URI base dell'Artifact Registry per fare il push delle immagini Docker"
+# }
+# 
+# output "service_account_email" {
+#   value       = google_service_account.app_sa.email
+#   description = "Email del Service Account creato"
+# }
