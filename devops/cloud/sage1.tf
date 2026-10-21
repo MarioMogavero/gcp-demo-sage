@@ -34,11 +34,11 @@ variable "resource_prefix" {
   default     = "its-ict-sage-mario-mogavero"
 }
 
-variable "container_image" {
-  type        = string
-  description = "URI dell'immagine Docker (es. europe-west1-docker.pkg.dev/PROJECT_ID/REPO_NAME/IMAGE:TAG)"
-  default     = "us-docker.pkg.dev/cloudrun/container/hello" # Immagine placeholder iniziale
-}
+# variable "container_image" {
+#   type        = string
+#   description = "URI dell'immagine Docker (es. europe-west1-docker.pkg.dev/PROJECT_ID/REPO_NAME/IMAGE:TAG)"
+#   default     = "us-docker.pkg.dev/cloudrun/container/hello" # Immagine placeholder iniziale
+# }
 
 provider "google" {
   project = var.project_id
