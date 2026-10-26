@@ -36,7 +36,7 @@ variable "service_name" {
 variable "resource_prefix" {
   type        = string
   description = "Prefisso da applicare ai nomi di tutte le risorse"
-  default     = "its-ict-mario-mogavero"
+  default     = "its-ict-mario-mog"
 }
 
 # variable "container_image" {
