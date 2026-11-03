@@ -20,6 +20,13 @@ resource "google_firestore_index" "chunks_embedding" {
   collection  = "chunks"
   query_scope = "COLLECTION"
 
+  # 1. I campi scalari devono essere definiti per primi
+  fields {
+    field_path = "__name__"
+    order      = "ASCENDING"
+  }
+
+  # 2. vector_config deve essere sempre l'ultimo elemento della lista fields
   fields {
     field_path = "embedding"
 
@@ -27,11 +34,6 @@ resource "google_firestore_index" "chunks_embedding" {
       dimension = 768
       flat {}
     }
-  }
-
-  fields {
-    field_path = "__name__"
-    order      = "ASCENDING"
   }
 
   lifecycle {
