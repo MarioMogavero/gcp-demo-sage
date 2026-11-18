@@ -3,7 +3,7 @@
 # ==============================================
 
 resource "google_storage_bucket" "bucket_instructions" {
-  name          = "${var.project_id}-instructions"
+  name          = "${var.resource_prefix}-instructions"
   project       = var.project_id
   location      = "EUROPE-WEST6"
   storage_class = "STANDARD"
