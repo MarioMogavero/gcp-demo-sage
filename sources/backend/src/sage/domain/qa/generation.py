@@ -5,6 +5,8 @@ from pathlib import Path
 from sage.domain.qa.models import Chunk
 from sage.integrations.llm.generate import generate_text
 
+from google.cloud import storage
+
 _PROMPT_TEMPLATE = (Path(__file__).parent / "prompts" / "answer_prompt.txt").read_text(
     encoding="utf-8"
 )
