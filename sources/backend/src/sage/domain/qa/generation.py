@@ -34,7 +34,7 @@ def build_prompt(question: str, chunks: list[Chunk]) -> str:
     # Legge il contenuto del file come testo (stringa formattata in UTF-8)
     contenuto = blob.download_as_text()
     
-    question_instruction = question+contenuto
+    question_instruction = question+ "\n\n" + contenuto
     return _PROMPT_TEMPLATE.format(context=context, question=question_instruction)
 
 
