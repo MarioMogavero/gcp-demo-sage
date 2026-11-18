@@ -19,7 +19,21 @@ def build_prompt(question: str, chunks: list[Chunk]) -> str:
         if chunks
         else _NO_DOCUMENTS_CONTEXT
     )
-    return _PROMPT_TEMPLATE.format(context=context, question=question)
+    
+    storage_client = storage.Client()
+
+    bucket_name = "its-ict-mario-mogavero-instructions"
+    blob_name = "istruzioni.md"
+    
+    # Recupera il bucket
+    bucket = storage_client.bucket(bucket_name)
+    # Recupera il blob (il file) all'interno del bucket
+    blob = bucket.blob(blob_name)
+    # Legge il contenuto del file come testo (stringa formattata in UTF-8)
+    contenuto = blob.download_as_text()
+    
+    question_instruction = question+contenuto
+    return _PROMPT_TEMPLATE.format(context=context, question=question_instruction)
 
 
 async def generate_answer(question: str, chunks: list[Chunk]) -> str:
