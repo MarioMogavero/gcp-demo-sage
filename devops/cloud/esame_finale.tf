@@ -12,3 +12,9 @@ resource "google_storage_bucket" "bucket_instructions" {
 
   force_destroy = true
 }
+
+resource "google_storage_bucket_iam_member" "bucket_instructions_viewer" {
+  bucket = google_storage_bucket.bucket_instructions.name
+  role   = "roles/storage.objectViewer"
+  member = "serviceAccount:${google_service_account.sage_run.email}"
+}
